@@ -54,7 +54,7 @@ namespace DematicCalculatorApiTest
             var calculatorService = new CalculatorService(mockFactory.Object);
 
             var exception = Assert.Throws<NotSupportedException>(() => calculatorService.HandleCalculation(dto));
-            Assert.Equal("Operation UnsupportedOperation is not supported.", exception.Message);
+            Assert.Equal("Operation BadData is not supported.", exception.Message);
         }
 
         private OperationDto GetTestData()
