@@ -14,11 +14,15 @@ namespace DematicCalculatorAPI.Services
         /// <exception cref="NotSupportedException"></exception>
         public CalculatorBaseService Create(OperationDto dto)
         {
+            string operationType = dto.Id.ToLower();
+
             // create operation object based on operation type 
-            CalculatorBaseService operation = dto.Id switch
+            CalculatorBaseService operation = operationType switch
             {
-                "Plus" => new AddOperation(),
-                "Multiplication" => new MultiplyOperation(),
+                "plus" => new AddOperation(),
+                "multiplication" => new MultiplyOperation(),
+                "division" => new DivisionOperation(),
+                "substruction" => new SubstructionOperation(),
                 _ => throw new NotSupportedException($"Operation {dto.Id} is not supported.")
             };
 

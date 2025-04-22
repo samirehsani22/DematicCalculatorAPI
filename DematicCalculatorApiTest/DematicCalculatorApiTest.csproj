@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DematicCalculatorAPI.Application\DematicCalculatorAPI.Application.csproj" />
+    <ProjectReference Include="..\DematicCalculatorAPI\DematicCalculatorAPI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
